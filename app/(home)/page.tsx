@@ -1,5 +1,5 @@
-import Tabs from "@/components/ui/Tabs";
-
+import FoodSearch from "./components/FoodSearch";
+import FoodFilter from "./components/FoodFilter";
 import FoodCatalog from "./components/FoodCatalog";
 import { getCategories, getFoods } from "./actions";
 import { Categories, Foods } from "./page.types";
@@ -23,10 +23,9 @@ export default async function Page() {
 
   return (
     <main className={styles.container}>
-      <input type="text" placeholder="Enter restaurant name..." />
-      <Tabs tabs={categories} />
+      <FoodSearch />
+      <FoodFilter categories={categories} />
       <FoodCatalog cards={foods} />
-      {/* <button onClick={handleLoadMore}>+ Show More</button> */}
     </main>
   );
 }
