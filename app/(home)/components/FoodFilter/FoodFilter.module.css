@@ -1,0 +1,37 @@
+.buttonGroup {
+  width: fit-content;
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+}
+
+.buttonGroup > button {
+  border: none;
+  border-right: 1px solid var(--primary);
+  border-radius: 0;
+}
+
+.buttonGroup > button:first-of-type {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.buttonGroup > button:last-of-type {
+  border-right: none;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.buttonGroup > .active {
+  background-color: var(--primary);
+}
+
+.buttonGroup > .active:first-of-type {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.buttonGroup > .active:last-of-type {
+  border-right: none;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}

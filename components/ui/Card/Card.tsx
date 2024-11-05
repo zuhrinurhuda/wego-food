@@ -1,5 +1,3 @@
-"use client";
-
 import { forwardRef, Ref } from "react";
 import Image from "next/image";
 import { CardProps } from "./Card.types";
