@@ -1,15 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 import ButtonGroup from "@/components/ui/ButtonGroup";
 import styles from "@/components/ui/ButtonGroup/ButtonGroup.module.css";
 import Button from "@/components/ui/Button";
 
-import { FoodFilterProps } from "./FoodFilter.types";
+import { useFood } from "../../context/FoodContext";
 
-export default function FoodFilter({ categories }: FoodFilterProps) {
+export default function FoodFilter() {
+  const { categories, foods, setFilteredFoods } = useFood();
   const [isActiveIndex, setIsActiveIndex] = useState(0);
+
+  const handleOnFilter = useCallback(
+    (index: number) => {
+      const filteredFoods = foods.filter(
+        (food) => food.categoryId === categories[index].id
+      );
+
+      setFilteredFoods(filteredFoods);
+      setIsActiveIndex(index);
+    },
+    [categories, foods, setFilteredFoods]
+  );
 
   return (
     <ButtonGroup>
@@ -17,7 +30,7 @@ export default function FoodFilter({ categories }: FoodFilterProps) {
         <Button
           key={id}
           className={isActiveIndex === index ? styles.active : ""}
-          onClick={() => setIsActiveIndex(index)}
+          onClick={() => handleOnFilter(index)}
         >
           {name}
         </Button>
