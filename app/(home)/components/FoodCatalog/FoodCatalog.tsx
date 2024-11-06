@@ -1,14 +1,16 @@
 "use client";
 
 import Card from "@/components/ui/Card";
-import { FoodCatalogProps } from "./FoodCatalog.types";
 import styles from "./FoodCatalog.module.css";
+import { useFood } from "../../context/FoodContext";
 
-export default function FoodCatalog({ cards }: FoodCatalogProps) {
+export default function FoodCatalog() {
+  const { filteredFoods } = useFood();
+
   return (
     <div className={styles.catalog}>
-      {cards.map((card) => (
-        <Card key={card?.id} {...card} />
+      {filteredFoods.map((food) => (
+        <Card key={food?.id} {...food} />
       ))}
     </div>
   );
