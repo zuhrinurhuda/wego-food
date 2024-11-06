@@ -24,7 +24,13 @@ export const FoodProvider = ({ children, initialState }: FoodProviderProps) => {
   const value = useMemo<FoodContextType>(
     () => ({
       foods: initialState.foods,
-      categories: initialState.categories,
+      categories: [
+        {
+          id: "all",
+          name: "All",
+        },
+        ...initialState.categories,
+      ],
       filteredFoods,
       setFilteredFoods,
     }),

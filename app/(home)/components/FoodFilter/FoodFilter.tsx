@@ -18,7 +18,7 @@ export default function FoodFilter() {
         (food) => food.categoryId === categories[index].id
       );
 
-      setFilteredFoods(filteredFoods);
+      setFilteredFoods(categories[index].id === "all" ? foods : filteredFoods);
       setIsActiveIndex(index);
     },
     [categories, foods, setFilteredFoods]
