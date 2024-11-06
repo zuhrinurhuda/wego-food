@@ -1,34 +1,14 @@
-import { forwardRef, Ref } from "react";
-import Image from "next/image";
-import { CardProps } from "./Card.types";
+import { CardContentProps, CardMediaProps, CardProps } from "./Card.types";
 import styles from "./Card.module.css";
 
-export default forwardRef(function Card(
-  {
-    // id,
-    // index,
-    // rating,
-    // promotion,
-    // isNew,
-    // categoryId,
-    // minCookTime,
-    // maxCookTime,
-    // restaurant,
-    name,
-    imageUrl,
-  }: CardProps,
-  ref: Ref<HTMLDivElement>
-) {
-  return (
-    <div ref={ref} className={styles.card}>
-      <Image
-        src={imageUrl}
-        alt={name}
-        className={styles.images}
-        width={600}
-        height={600}
-      />
-      <div className={styles.content}>{name}</div>
-    </div>
-  );
-});
+export const Card = ({ children }: CardProps) => {
+  return <div className={styles.card}>{children}</div>;
+};
+
+export const CardMedia = ({ children }: CardMediaProps) => {
+  return <div className={styles.media}>{children}</div>;
+};
+
+export const CardContent = ({ children }: CardContentProps) => {
+  return <div className={styles.content}>{children}</div>;
+};

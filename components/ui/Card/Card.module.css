@@ -9,13 +9,13 @@
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.images {
-  width: 100%;
-  height: 200px;
-  border-radius: 16px 16px 0 0;
-  object-fit: cover;
+.media {
+  position: relative;
 }
 
 .content {
   padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
