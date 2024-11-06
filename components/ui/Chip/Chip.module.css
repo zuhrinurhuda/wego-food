@@ -1,0 +1,16 @@
+.chip {
+  background-color: #f7f8fa;
+  color: #656569;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chip > svg {
+  background-color: #f7f8fa;
+  height: 14px;
+}
