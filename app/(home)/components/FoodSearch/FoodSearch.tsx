@@ -24,12 +24,14 @@ export default function FoodSearch() {
   );
 
   return (
-    <Input
-      type="text"
-      placeholder="Enter restaurant name..."
-      startIcon={<SearchIcon />}
-      className={styles.search}
-      onChange={handleOnSearch}
-    />
+    <section id="food-search">
+      <Input
+        type="text"
+        placeholder="Enter restaurant name..."
+        startIcon={<SearchIcon />}
+        className={styles.search}
+        onChange={handleOnSearch}
+      />
+    </section>
   );
 }

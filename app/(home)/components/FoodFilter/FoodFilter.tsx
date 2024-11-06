@@ -25,16 +25,18 @@ export default function FoodFilter() {
   );
 
   return (
-    <ButtonGroup>
-      {categories.map(({ id, name }, index) => (
-        <Button
-          key={id}
-          className={isActiveIndex === index ? styles.active : ""}
-          onClick={() => handleOnFilter(index)}
-        >
-          {name}
-        </Button>
-      ))}
-    </ButtonGroup>
+    <section id="food-filter">
+      <ButtonGroup>
+        {categories.map(({ id, name }, index) => (
+          <Button
+            key={id}
+            className={isActiveIndex === index ? styles.active : ""}
+            onClick={() => handleOnFilter(index)}
+          >
+            {name}
+          </Button>
+        ))}
+      </ButtonGroup>
+    </section>
   );
 }
