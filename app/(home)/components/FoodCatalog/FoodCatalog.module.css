@@ -9,3 +9,8 @@
     gap: 16px;
   }
 }
+
+.button {
+  width: fit-content;
+  margin: 0 auto;
+}
